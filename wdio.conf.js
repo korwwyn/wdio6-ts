@@ -139,7 +139,7 @@ exports.config = {
   mochaOpts: {
     ui: 'bdd',
     timeout: 60000,
-    require: ['@babel/register', 'ts-node/register'],
+    require: ['ts-node/register'],
     compilers: [
       // optional
       'tsconfig-paths/register'
