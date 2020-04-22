@@ -1,3 +1,5 @@
+const commands = require('./src/helpers/commands');
+
 exports.config = {
   //
   // ====================
@@ -186,11 +188,14 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that are to be run
    */
-  // before: function () {
-  //   var chai = require('chai');
-  //   global.expect = chai.expect;
-  //   chai.Should();
-  // },
+  before: function() {
+    /**
+     * Adds custom commands to "browser" object
+     */
+    Object.keys(commands).forEach((key) => {
+      browser.addCommand(key, commands[key]);
+    });
+  },
   /**
    * Runs before a WebdriverIO command gets executed.
    * @param {String} commandName hook command name

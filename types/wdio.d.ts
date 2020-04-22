@@ -1,17 +1,7 @@
 declare module WebdriverIO {
   // adding command to `browser`
-  interface Browser {
-      browserCustomCommand: (arg) => void
-
-      getUrlAndTitle: typeof getUrlAndTitle
+  interface Browser {  
+    getUrlAndTitle: () => {url: string; title: string};
+    waitForText: () => void;
   }
 }
-
-function getUrlAndTitle() {
-  return {
-    url: this.getUrl(),
-    title: this.getTitle()
-  }
-}
-
-browser.addCommand('getUrlAndTitle', getUrlAndTitle);

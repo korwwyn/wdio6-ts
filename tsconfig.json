@@ -12,7 +12,8 @@
   },
   "include": [
     "./test/**/*.ts",
-    "./pageObjects/*.ts"
+    "./pageObjects/*.ts",
+    "./helpers/*.ts"
   ],
   "exclude": [
     "node_modules"

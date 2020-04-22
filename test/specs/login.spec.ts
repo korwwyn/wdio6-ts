@@ -17,6 +17,7 @@ describe('login form', () => {
     LoginPage.password.setValue('SuperSecretPassword!');
     LoginPage.submit();
 
+
     expect(LoginPage.flash.getText()).to.contain('You logged into a secure area!');
   });
 });
